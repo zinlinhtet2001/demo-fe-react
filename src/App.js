@@ -8,10 +8,9 @@ import About from "./pages/About";
 import "./App.css";
 
 function App() {
-  const [locale, setLocale] = useState("th"); // Default to Thailand
+  const [locale, setLocale] = useState("th"); 
   const [data, setData] = useState(null);
 
-  // Detect domain and set locale
   useEffect(() => {
     const hostname = window.location.hostname;
     if (hostname.includes(".vn")) {
@@ -21,7 +20,7 @@ function App() {
     }
   }, []);
 
-  // Fetch data from backend API
+  
   useEffect(() => {
     const apiUrl = config[locale].apiUrl;
     axios
